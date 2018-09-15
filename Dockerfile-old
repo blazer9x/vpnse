@@ -1,0 +1,24 @@
+# SoftEther VPN server RTM
+FROM ubuntu
+
+EXPOSE 80/tcp 443/tcp 992/tcp 1194/tcp 5555/tcp 80/udp 443/udp 500/udp 1194/udp 4500/udp
+ENTRYPOINT ["/usr/local/vpnserver/entrypoint"]
+
+WORKDIR /usr/local/vpnserver
+RUN apt-get update && \
+    apt-get -y -q install build-essential && \
+    apt-get -y -q install iptables gcc make wget && \
+    apt-get -y -q install libncurses5-dev libreadline-dev libssl-dev && \
+    wget "https://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/softether-src-v4.25-9656-rtm.tar.gz" -O /tmp/softether-vpnserver.tar.gz && \
+    tar -xzvf /tmp/softether-vpnserver.tar.gz -C /usr/local/
+
+WORKDIR /usr/local/v4.25-9656
+RUN ./configure && \
+    make && \
+    mkdir -p /etc/vpnserver && \
+    apt-get purge -y -q --auto-remove gcc make wget && \
+    apt-get clean && \
+    rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
+    rm /tmp/softether-vpnserver.tar.gz
+
+COPY entrypoint /usr/local/vpnserver/entrypoint

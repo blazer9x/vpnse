@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Logs dir
+mkdir -p /var/log/vpnserver/security_log
+mkdir -p /var/log/vpnserver/packet_log
+mkdir -p /var/log/vpnserver/server_log
+
+# Softlink logs
+ln -s /var/log/vpnserver/*_log /usr/vpnserver/
+
+# Softlink config
+touch /etc/vpnserver/vpn_server.config
+ln -sfv /etc/vpnserver/vpn_server.config .
+
+exec /usr/vpnserver/vpnserver execsvc
+
+exit $?
