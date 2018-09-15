@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#Link Logs
-mkdir -p /usr/vpnserver/log
-ln -sf /usr/vpnserver/log /usr/vpnserver/*_log 
-
 #Link Configs
 mkdir -p /etc/vpnserver
 ln -sf /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config

@@ -3,8 +3,7 @@ services:
   vpnse:
     image: vpnse:latest
     volumes:
-      - ./data/etc:/etc/vpnserver
-      - ./data/log:/usr/vpnserver/log
+      - ./data:/etc/vpnserver
     cap_add: [NET_ADMIN]
     network_mode: host
     restart: always
