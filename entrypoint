@@ -2,7 +2,7 @@
 
 #Link Logs
 mkdir -p /usr/vpnserver/log
-ln -sf /usr/vpnserver/*_log /usr/vpnserver/log
+ln -sf /usr/vpnserver/log /usr/vpnserver/*_log 
 
 #Link Configs
 mkdir -p /etc/vpnserver
