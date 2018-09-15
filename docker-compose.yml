@@ -1,13 +1,3 @@
-# VPN-SE Docker Image to build on top of Centos 7
-
-```
-cd vpnse
-./build
-```
-
-Example for docker-compose.yml:
-
-```
 version: '2'
 services:
   vpnse:
@@ -18,4 +8,3 @@ services:
     cap_add: [NET_ADMIN]
     network_mode: host
     restart: always
-```
