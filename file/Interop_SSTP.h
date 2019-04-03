@@ -113,7 +113,7 @@
 #define	SSTP_IPC_POSTFIX				"SSTP"
 #define	SSTP_ECHO_SEND_INTERVAL_MIN		25000					// Transmission interval of Echo Request (minimum)
 #define	SSTP_ECHO_SEND_INTERVAL_MAX		47920					// Transmission interval of Echo Request (maximum)
-#define	SSTP_TIMEOUT					100000					// Communication time-out of SSTP
+#define	SSTP_TIMEOUT					60000					// Communication time-out of SSTP
 
 // SSTP Message Type
 #define	SSTP_MSG_CALL_CONNECT_REQUEST				0x0001
