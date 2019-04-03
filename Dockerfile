@@ -7,9 +7,9 @@ ENTRYPOINT ["/usr/entrypoint"]
 WORKDIR /tmp
 RUN yum -y install gcc gcc-c++ make wget curl && \
  yum -y install openssl-devel readline-devel && \
- wget "https://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/softether-src-v4.25-9656-rtm.tar.gz" -O /tmp/softether-vpnserver.tar.gz && \
+ wget "https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-src-v4.29-9680-rtm.tar.gz" -O /tmp/softether-vpnserver.tar.gz && \
  tar -xzvf /tmp/softether-vpnserver.tar.gz -C /tmp/
-WORKDIR /tmp/v4.25-9656
+WORKDIR /tmp/v4.29-9680
 RUN ./configure && \
  make clean && \
  make && \
