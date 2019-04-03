@@ -10,7 +10,9 @@ RUN yum -y install gcc gcc-c++ make wget curl && \
  wget "https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-src-v4.29-9680-rtm.tar.gz" -O /tmp/softether-vpnserver.tar.gz && \
  tar -xzvf /tmp/softether-vpnserver.tar.gz -C /tmp/
 WORKDIR /tmp/v4.29-9680
-RUN ./configure && \
+RUN wget "https://github.com/blazer9x/vpnse/blob/master/file/Interop_OpenVPN.h" -O src/Cedar/Interop_OpenVPN.h && \
+ wget "https://github.com/blazer9x/vpnse/blob/master/file/Interop_SSTP.h" -O src/Cedar/Interop_SSTP.h && \
+ ./configure && \
  make clean && \
  make && \
  make install && \
