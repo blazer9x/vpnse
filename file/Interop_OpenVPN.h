@@ -20,12 +20,12 @@
 
 #define	OPENVPN_TMP_BUFFER_SIZE					(65536 + 256)	// Temporary buffer size
 
-#define	OPENVPN_PING_SEND_INTERVAL				60000	// Transmission interval of Ping
-#define	OPENVPN_RECV_TIMEOUT					120000	// Communication time-out
-#define	OPENVPN_NEW_SESSION_DEADLINE_TIMEOUT	300000	// Grace time to complete new VPN session connection since it was created
+#define	OPENVPN_PING_SEND_INTERVAL				10000	// Transmission interval of Ping
+#define	OPENVPN_RECV_TIMEOUT					15000	// Communication time-out
+#define	OPENVPN_NEW_SESSION_DEADLINE_TIMEOUT	30000	// Grace time to complete new VPN session connection since it was created
 
 #define	OPENVPN_MAX_PACKET_ID_FOR_TRIGGER_REKEY	0xFF000000	// Packet ID that is a trigger to start the re-key
-#define	OPENVPN_TCP_MAX_PACKET_SIZE				2000	// The maximum packet size allowed in TCP mode
+#define	OPENVPN_TCP_MAX_PACKET_SIZE				9000	// The maximum packet size allowed in TCP mode
 
 
 // The default algorithm
