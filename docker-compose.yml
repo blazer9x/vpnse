@@ -4,6 +4,6 @@ services:
     image: vpnse:latest
     volumes:
       - ./data:/etc/vpnserver
-    cap_add: [NET_ADMIN]
+    cap_add: [ALL]
     network_mode: host
     restart: always
