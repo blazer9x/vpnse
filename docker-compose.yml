@@ -1,4 +1,4 @@
-version: '2'
+version: '2.2'
 services:
   vpnse:
     image: vpnse:latest
@@ -7,3 +7,4 @@ services:
     cap_add: [ALL]
     network_mode: host
     restart: always
+    cpus: 1.0
