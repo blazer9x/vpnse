@@ -1,6 +1,3 @@
-// SoftEther VPN Source Code - Stable Edition Repository
-// Cedar Communication Module
-
 // Interop_OpenVPN.h
 // Header of Interop_OpenVPN.c
 
@@ -13,7 +10,7 @@
 #define	OPENVPN_UDP_PORT_INCLUDE				1195	// OpenVPN default UDP port number (Operating within the client)
 
 #define	OPENVPN_MAX_NUMACK						4		// The maximum number of ACKs
-#define	OPENVPN_NUM_CHANNELS					8		// Maximum number of channels during a session
+#define	OPENVPN_NUM_CHANNELS					32		// Maximum number of channels during a session
 #define	OPENVPN_CONTROL_PACKET_RESEND_INTERVAL	1000		// Control packet retransmission interval
 #define	OPENVPN_CONTROL_PACKET_MAX_DATASIZE		1200	// Maximum data size that can be stored in one control packet
 
