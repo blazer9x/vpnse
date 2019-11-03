@@ -1,3 +1,6 @@
+// SoftEther VPN Source Code - Stable Edition Repository
+// Cedar Communication Module
+
 // Interop_OpenVPN.h
 // Header of Interop_OpenVPN.c
 
@@ -10,8 +13,8 @@
 #define	OPENVPN_UDP_PORT_INCLUDE				1195	// OpenVPN default UDP port number (Operating within the client)
 
 #define	OPENVPN_MAX_NUMACK						4		// The maximum number of ACKs
-#define	OPENVPN_NUM_CHANNELS					64		// Maximum number of channels during a session
-#define	OPENVPN_CONTROL_PACKET_RESEND_INTERVAL	100		// Control packet retransmission interval
+#define	OPENVPN_NUM_CHANNELS					8		// Maximum number of channels during a session
+#define	OPENVPN_CONTROL_PACKET_RESEND_INTERVAL	1000		// Control packet retransmission interval
 #define	OPENVPN_CONTROL_PACKET_MAX_DATASIZE		1200	// Maximum data size that can be stored in one control packet
 
 #define	OPENVPN_MAX_SSL_RECV_BUF_SIZE			(256 * 1024)	// SSL receive buffer maximum length
@@ -20,12 +23,12 @@
 
 #define	OPENVPN_TMP_BUFFER_SIZE					(65536 + 256)	// Temporary buffer size
 
-#define	OPENVPN_PING_SEND_INTERVAL				5000	// Transmission interval of Ping
-#define	OPENVPN_RECV_TIMEOUT					10000	// Communication time-out
-#define	OPENVPN_NEW_SESSION_DEADLINE_TIMEOUT	30000	// Grace time to complete new VPN session connection since it was created
+#define	OPENVPN_PING_SEND_INTERVAL				30000	// Transmission interval of Ping
+#define	OPENVPN_RECV_TIMEOUT					100000	// Communication time-out
+#define	OPENVPN_NEW_SESSION_DEADLINE_TIMEOUT	300000	// Grace time to complete new VPN session connection since it was created
 
 #define	OPENVPN_MAX_PACKET_ID_FOR_TRIGGER_REKEY	0xFF000000	// Packet ID that is a trigger to start the re-key
-#define	OPENVPN_TCP_MAX_PACKET_SIZE				9000	// The maximum packet size allowed in TCP mode
+#define	OPENVPN_TCP_MAX_PACKET_SIZE				2000	// The maximum packet size allowed in TCP mode
 
 
 // The default algorithm
