@@ -11,8 +11,8 @@ RUN yum -y install gcc gcc-c++ make wget curl epel-release && \
  tar -xzvf /tmp/softether-vpnserver.tar.gz -C /tmp/
  
 WORKDIR /tmp/v4.29-9680
-COPY file/Interop_OpenVPN.h src/Cedar/Interop_OpenVPN.h
-COPY file/Interop_SSTP.h src/Cedar/Interop_SSTP.h
+#COPY file/Interop_OpenVPN.h src/Cedar/Interop_OpenVPN.h
+#COPY file/Interop_SSTP.h src/Cedar/Interop_SSTP.h
 RUN  ./configure && \
  make clean && \
  make && \
