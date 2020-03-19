@@ -12,3 +12,4 @@ DNSM
 
 ifconfig tap_1 $IP
 systemctl restart dnsmasq
+systemctl status dnsmasq
