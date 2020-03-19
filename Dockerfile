@@ -6,7 +6,7 @@ ENTRYPOINT ["/usr/entrypoint"]
 
 WORKDIR /tmp
 RUN yum -y install gcc gcc-c++ make wget curl epel-release && \
- yum -y install openssl-devel readline-devel iptables-services && \
+ yum -y install net-tools iproute openssl-devel readline-devel iptables-services && \
  wget "https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-src-v4.29-9680-rtm.tar.gz" -O /tmp/softether-vpnserver.tar.gz && \
  tar -xzvf /tmp/softether-vpnserver.tar.gz -C /tmp/
  
