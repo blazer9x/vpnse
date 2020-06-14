@@ -2,7 +2,7 @@
 
 #Link Configs
 mkdir -p /etc/vpnserver
-ln -sf /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config
+ln -sf /etc/vpnserver/vpn_server.config /tmp/vpnserver/vpn_server.config
 
-exec /usr/vpnserver/vpnserver execsvc
+exec /tmp/vpnserver/vpnserver execsvc
 exit $?
