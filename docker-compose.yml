@@ -2,11 +2,15 @@ version: '2.2'
 services:
   vpnse:
     image: vpnse:latest
+    container_name: vpnse
     volumes:
       - ./data:/etc/vpnserver
+    cap_add: [ALL]
     devices:
       - /dev/net/tun:/dev/net/tun
-    cap_add: [ALL]
     network_mode: host
     restart: always
+    command: >
+      ./vpnserver start
+    mem_limit: 256M
     cpus: 1.0
