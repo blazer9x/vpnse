@@ -10,7 +10,5 @@ services:
       - /dev/net/tun:/dev/net/tun
     network_mode: host
     restart: always
-    command: >
-      ./vpnserver start
     mem_limit: 256M
     cpus: 1.0
