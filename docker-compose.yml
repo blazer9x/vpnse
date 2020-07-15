@@ -11,4 +11,4 @@ services:
     network_mode: host
     restart: always
     mem_limit: 256M
-    cpus: 1.5
+    cpus: 0.5
