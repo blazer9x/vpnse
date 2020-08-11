@@ -13,8 +13,9 @@ cat << TAP1 > /etc/dnsmasq.d/tap.conf
 interface=tap_1
 listen-address=$IP
 dhcp-range=$DHCPRANGE,12h
+server=1.1.1.1
 server=8.8.8.8
-server=8.8.4.4
+cache-size=100
 TAP1
 
 cat /etc/dnsmasq.d/tap.conf
