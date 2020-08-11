@@ -3,11 +3,11 @@
 echo "for use with tap - bridged adapter"
 
 sysctl -w net.ipv4.ip_forward=1
-
 yum -y install dnsmasq
 
-IP=192.168.4.1
-DHCPRANGE=192.168.4.100,192.168.4.200
+IP=192.168.100.1
+DHCPRANGE=192.168.100.100,192.168.100.200
+DEVNAME=tap_1
 
 cat << TAP1 > /etc/dnsmasq.d/tap.conf
 interface=tap_1
@@ -20,8 +20,9 @@ TAP1
 cat /etc/dnsmasq.d/tap.conf
 systemctl restart dnsmasq
 
-ip a flush tap_1
-ip a change $IP/24 dev tap_1
+ip a flush $DEVNAME
+ip a change $IP/24 dev $DEVNAME
+ip link set $DEVNAME mtu 9000
 
 iptables -D FORWARD -j ACCEPT
 iptables -A FORWARD -j ACCEPT
