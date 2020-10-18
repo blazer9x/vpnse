@@ -9,8 +9,14 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     network_mode: host
+<<<<<<< HEAD
     restart: unless-stopped
     user: root
     cpus: 1
     mem_limit: 200M
 
+=======
+    restart: always
+    mem_limit: 256M
+    cpus: 0.5
+>>>>>>> fed5905f8241529899408325a15ea896d51899e3
